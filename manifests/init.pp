@@ -37,6 +37,8 @@
 #  Prometheus configuration directory (default /etc/prometheus)
 # @param localstorage
 #  Location of prometheus local storage (storage.local argument)
+# @param manage_localstorage
+#  If module manages local storage or not
 # @param extra_options
 #  Extra options added to prometheus startup command
 # @param config_hash
@@ -231,6 +233,7 @@ class prometheus (
   String $package_ensure,
   String $config_dir,
   Stdlib::Absolutepath $localstorage,
+  Boolean $manage_localstorage                                                  = true,
   String $config_template,
   String $config_mode,
   Hash $global_config,

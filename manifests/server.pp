@@ -14,6 +14,7 @@ class prometheus::server (
   String $package_ensure                                                        = $prometheus::package_ensure,
   String $config_dir                                                            = $prometheus::config_dir,
   Variant[Stdlib::Absolutepath, Boolean[false]] $localstorage                   = $prometheus::localstorage,
+  Boolean $manage_localstorage                                                  = $prometheus::manage_localstorage,
   String $config_template                                                       = $prometheus::config_template,
   String $config_mode                                                           = $prometheus::config_mode,
   Hash $global_config                                                           = $prometheus::global_config,
