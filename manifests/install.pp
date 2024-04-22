@@ -6,7 +6,7 @@
 class prometheus::install {
   assert_private()
 
-  if $prometheus::server::localstorage {
+  if $prometheus::server::localstorage and $prometheus::server::manage_localstorage {
     file { $prometheus::server::localstorage:
       ensure => 'directory',
       owner  => $prometheus::server::user,
